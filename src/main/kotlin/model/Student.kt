@@ -13,8 +13,9 @@ class Student(id: String?, name: String?, email: String?, birthDate: Date?) : Pe
         return average;
     }
 
-    fun enrollToCourse(course: Course?) {
-        //TODO implement this method
+    val addAlunoCurso = hashMapOf<String?, String>()
+    fun enrollToCourse( course: Course?) {
+        addAlunoCurso.put(id.toString()!!, courses.toString()!!)
     }
 
     fun registerApprovedCourse(course: Course) {
@@ -22,17 +23,14 @@ class Student(id: String?, name: String?, email: String?, birthDate: Date?) : Pe
     }
 
     fun isCourseApproved(courseCode: String?): Boolean {
-        //TODO implement this method
-        return false
+        return (approvedCourses.contains(id))
     }
 
     fun isAttendingCourse(courseCode: String?): Boolean {
-        //TODO implement this method
-        return false
+        return (addAlunoCurso.contains(id))
     }
 
     override fun getApprovedCourses(): List<Course>? {
-        //TODO implement this method
         return ArrayList()
     }
 

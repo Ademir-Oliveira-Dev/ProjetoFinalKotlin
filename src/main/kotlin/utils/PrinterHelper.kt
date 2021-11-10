@@ -37,8 +37,12 @@ object PrinterHelper {
         val email = scanner.next()
         println("| Enter student birth date(mm/dd/yyyy)|")
         val formatter: DateFormat = SimpleDateFormat("mm/dd/yyyy")
-        //TODO validate date format and catch exception to avoid crash
-        val birthDate = formatter.parse(scanner.next())
+        var birthDate : Date
+        try {
+            birthDate = formatter.parse(scanner.next())
+        }catch (e: Exception){
+            birthDate = formatter.parse("00/00/0000")
+        }
         println("|-------------------------------------|")
         val student = Student(id, name, email, birthDate)
         println("Student Successfully Registered! ")

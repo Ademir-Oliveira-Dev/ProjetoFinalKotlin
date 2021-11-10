@@ -17,12 +17,15 @@ class StudentService {
     }
 
     fun isSubscribed(studentId: String?): Boolean {
-        //TODO implement this method
+        if (students.containsKey(studentId)){
+            students[studentId]
+        }
         return false
     }
 
     fun showSummary() {
-        //TODO implement
+        println("A quantidade de alunos são: ${students.size}")
+        println("${students.toList()}")
     }
 
     fun enrollToCourse(studentId: String?, course: Course?) {
